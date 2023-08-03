@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+        .wide-column {
+            width: 1500px; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+       
+        <span *ngFor="let r of requests">
+            <div class="container" *ngIf="!flag">
+                <table class="table">
+                    <tr align="center">
+                        <th >Email ID</th>
+                        <th >Name</th>
+                        <th style="width: 200px">Date of Birth</th>
+                        <th >Address</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Aadhar ID</th>
+                        <th>Request for </th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                    <tr align="center">
+                        <td>{{r.emailid}}</td>
+                        <td>{{r.name}}</td>
+                        <td>{{r.dob}}</td>
+                        <td>{{r.address}}</td>
+                        <td>{{r.phone}}</td>
+                        <td>{{r.gender}}</td>
+                        <td>{{r.adharid}}</td>
+                        <td>{{r.status}}</td>
+                        <td><input type="button" value="DENY REQUEST" (click)="denyRequest(r.adharid)"/></td>
+                        <td> <input type="button" value="APPROVE REQUEST" (click)="approvereq(r)"/></td>
+                    </tr>
+                </table>
+                <hr><br>
+            
+            </div>
+        </span>
+        <br/><br>
+        <span style="color:red">{{msg}}</span>
+    </div>
+</body>
+</html>
+

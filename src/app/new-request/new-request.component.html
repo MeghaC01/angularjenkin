@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); padding: 20px;">
+        <h2>Apply for Aadhar Card</h2><br>
+        <form [formGroup]="reqRef" (ngSubmit)="storeRequest()">
+            <input type="hidden" name="status" value="New aadhar request">
+            <table cellpadding="10">
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" class="form-control" formControlName="emailid"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" class="form-control" formControlName="name"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="text" class="form-control" formControlName="dob"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" class="form-control" formControlName="address"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="text" class="form-control" formControlName="phone"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="text" class="form-control" formControlName="gender"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-success">APPLY</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="reset" class="btn btn-dark">RESET</button>
+                    </td>
+                </tr>
+            </table>
+        </form><br/>
+        <span style="color:green">{{storeMsg}}</span>
+    </div>
+</body>
+</html>

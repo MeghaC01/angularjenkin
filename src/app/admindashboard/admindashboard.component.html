@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a routerLink="viewReqt" class="btn btn-primary">View All Request</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a routerLink="viewall" class="btn btn-primary">Display all issued Aadhaar Card</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-primary" value="logout" (click)="logout()"/>
+        <br><br><br><br>
+        <router-outlet></router-outlet>        
+      </div>
+</body>
+</html>

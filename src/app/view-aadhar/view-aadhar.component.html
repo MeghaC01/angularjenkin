@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div *ngIf="!flag">
+      <img src="../../assets/adharimg.jpeg" alt="" srcset="" />
+      <div class="">
+        <table cellpadding="10">
+          <tr>
+            <td style="font-weight: bold;">Name: {{ myadhar.name }}</td>
+            <td style="font-weight: bold;">Date of Birth: {{ myadhar.dob }}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;">Address: {{ myadhar.address }}</td>
+            <td style="font-weight: bold;">Phone Number: {{ myadhar.phone }}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;">Gender: {{ myadhar.gender }}</td>
+            <td style="font-weight: bold;">email: {{ myadhar.emailid }}</td>
+          </tr>
+          <tr><td colspan="2" align="center" style="font-weight: bold;">{{ myadhar.adharid}}</td></tr>
+        </table>
+        <span style="color: green">{{ msg }}</span><br />
+    <input type="button" class="btn btn-dark" value="Update" (click)="approvereq(myadhar)"/><br /><br />
+      </div>
+    </div>
+  
+    
+    
+    <div *ngIf="flag">
+      <form (ngSubmit)="saveReqtoDB()">
+        <table cellpadding="10">
+          <tr>
+            <td>Aadhar Number</td>
+            <td><input type="text" name="adharid" [(ngModel)]="myadhar.adharid" readonly/></td>
+        </tr>
+          <tr>
+              <td>Email</td>
+              <td> <input type="text" name="emailid" [(ngModel)]="myadhar.emailid"  readonly/></td>
+          </tr>
+          <tr>
+              <td>Name</td>
+              <td><input type="text"  name="name"  [(ngModel)]="myadhar.name" /></td>
+          </tr>
+          <tr>
+              <td>Date of Birth</td>
+              <td> <input type="text" name="dob"  [(ngModel)]="myadhar.dob" /></td>
+          </tr>
+          <tr>
+              <td>Address</td>
+              <td><input type="text" name="address" [(ngModel)]="myadhar.address"/><br /></td>
+          </tr>
+          <tr>
+              <td>Phone Number</td>
+              <td><input type="text" name="phone" [(ngModel)]="myadhar.phone"/></td>
+          </tr>
+          <tr>
+              <td>Gender</td>
+              <td><input type="text" name="gender" [(ngModel)]="myadhar.gender"/></td>
+          </tr>
+          <tr>
+                <td><input type="submit" class="btn btn-success" value="Update"/></td>
+                <td><input type="reset" class="btn btn-dark" value="reset" /></td>
+          </tr>
+        </table>
+      </form>
+      <br />
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn-grey {
+      background-color:brown;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a routerLink="storeReq" class="btn btn-primary">Apply For New Aadhar Card</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a routerLink="view" class="btn btn-primary">View My Aadhar Card</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-primary" value="Apply For Duplicate Card" (click)="applydup()"/>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-primary" value="Apply For Close Adhar Card" (click)="closeadhar()"/>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-primary" value="logout" (click)="logout()"/><br><br>
+    <span style="color:green">{{msg}}</span><br><br>
+
+    <router-outlet></router-outlet>
+    <br/>
+  </div>
+</body>
+</html>
